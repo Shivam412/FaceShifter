@@ -49,5 +49,5 @@ def swap_faces(Xs_raw, Xt_raw):
 
         Y = np.concatenate((Ys, Yt), axis=1)
         X = np.concatenate((Xs_raw/255., Xt_raw/255.), axis=1)
-        image = np.concatenate((X*255., Y*255.), axis=0)
-        return image
+        image = np.concatenate((X, Y), axis=0)
+        return image*255.
