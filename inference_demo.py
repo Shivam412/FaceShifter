@@ -26,8 +26,8 @@ test_transform = transforms.Compose([
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 ])
 
-Xs_path = '/home/taotao/Pictures/u=3322705847,3022779128&fm=26&gp=0.jpg'
-Xt_path = '/home/taotao/Pictures/u=3977885541,1855342996&fm=11&gp=0.jpg'
+Xs_path = './photos/Chris_Evans.jpg'
+Xt_path = './photos/rdj.jpg'
 
 Xs_raw = cv2.imread(Xs_path)
 Xt_raw = cv2.imread(Xt_path)
