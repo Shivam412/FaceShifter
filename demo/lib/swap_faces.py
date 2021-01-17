@@ -10,18 +10,7 @@ import cv2
 import PIL.Image as Image
 import numpy as np
 
-def swap_faces(Xs_raw, Xt_raw):
-
-    detector = MTCNN()
-    device = torch.device('cuda')
-    G = AEI_Net(c_id=512)
-    G.eval()
-    G.load_state_dict(torch.load('./saved_models/G_latest.pth', map_location=torch.device('cpu')))
-    G = G.cuda()
-
-    arcface = Backbone(50, 0.6, 'ir_se').to(device)
-    arcface.eval()
-    arcface.load_state_dict(torch.load('./face_modules/model_ir_se50.pth', map_location=device), strict=False)
+def swap_faces(Xs_raw, Xt_raw, detector, G, arcface):
 
     test_transform = transforms.Compose([
         transforms.ToTensor(),
