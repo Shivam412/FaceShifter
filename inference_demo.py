@@ -53,5 +53,5 @@ with torch.no_grad():
     Y = np.concatenate((Ys, Yt), axis=1)
     X = np.concatenate((Xs_raw/255., Xt_raw/255.), axis=1)
     image = np.concatenate((X, Y), axis=0)
-    cv2.imshow('image', image)
-    cv2.waitKey(0)
+    cv2.imwrite('image.jpg', image*255.)
+    # cv2.waitKey(0)
