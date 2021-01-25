@@ -1,6 +1,7 @@
 import sys
 sys.path.append('./face_modules/')
 import torch
+import time
 import torchvision.transforms as transforms
 import torch.nn.functional as F
 from face_modules.model import Backbone, Arcface, MobileFaceNet, Am_softmax, l2_norm
